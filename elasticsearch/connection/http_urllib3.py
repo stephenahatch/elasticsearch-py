@@ -113,7 +113,7 @@ class Urllib3HttpConnection(Connection):
 
             response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
             duration = time.time() - start
-            raw_data = response.data.decode('utf-8')
+            raw_data = response.data.decode('utf-8', 'surrogatepass')
         except Exception as e:
             self.log_request_fail(method, full_url, url, body, time.time() - start, exception=e)
             if isinstance(e, UrllibSSLError):
