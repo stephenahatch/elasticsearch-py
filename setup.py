@@ -3,7 +3,7 @@ from os.path import join, dirname
 from setuptools import setup, find_packages
 import sys
 
-VERSION = (5, 4, 0)
+VERSION = (5, 4, 0, 5248)
 __version__ = VERSION
 __versionstr__ = '.'.join(map(str, VERSION))
 
@@ -29,13 +29,13 @@ if sys.version_info[:2] == (2, 6):
 
 setup(
     name = 'elasticsearch',
-    description = "Python client for Elasticsearch",
+    description = "Python client for Elasticsearch (with Sherlock specific bug fixed), this should go away once elasticsearch client PRs merged.",
     license="Apache License, Version 2.0",
-    url = "https://github.com/elastic/elasticsearch-py",
+    url = "https://github.com/stephenahatch/elasticsearch-py/",
     long_description = long_description,
     version = __versionstr__,
-    author = "Honza Král",
-    author_email = "honza.kral@gmail.com",
+    author = "Tyler Harden",
+    author_email = "tyler.harden@vertical-knowledge.com",
     packages=find_packages(
         where='.',
         exclude=('test_elasticsearch*', )
